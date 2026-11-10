@@ -38,7 +38,7 @@ def indexa_por_iniciales(texto: str) -> dict[str, set[str]]:
          que comienzan por dicha inicial.
     
     """
-    # TODO: ¿Puedo hacerlo sin usar el if?
+    # TODO: ¿Puedo hacerlo sin usar el if? => NO (por ahora)
     
     res = {}
     for palabra in texto.lower().split():
@@ -47,6 +47,10 @@ def indexa_por_iniciales(texto: str) -> dict[str, set[str]]:
             res[clave].add(palabra)
         else:
             res[clave] = {palabra}
+        # Una alternativa:
+        # if clave not in res:
+        #     res[clave] = set()
+        # res[clave].add(palabra)
     return res
 
 
